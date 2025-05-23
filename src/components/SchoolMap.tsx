@@ -157,7 +157,7 @@ const SchoolMap = () => {
               className="absolute inset-0 w-full h-full"
               style={{ filter: "drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1))" }}
             >
-              {/* Map background - actual outline shape of Rwanda */}
+              {/* Main outline of Rwanda - simplified polygon shape */}
               <path
                 d="M29.5,20 L46,15 L63,17 L72,26 L80,39 L77,53 L82,62 L72,76 L61,81 L51,82 L37,80 L27,73 L18,61 L14,48 L20,37 L19,28 L29.5,20 Z"
                 fill="#e6ffe6"
@@ -337,13 +337,15 @@ const SchoolMap = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes pulse {
-          0% { transform: scale(1); opacity: 0.5; }
-          50% { transform: scale(1.2); opacity: 0.3; }
-          100% { transform: scale(1); opacity: 0.5; }
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.3; }
+            100% { transform: scale(1); opacity: 0.5; }
+          }
+        `}
+      </style>
     </section>
   );
 };
