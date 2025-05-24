@@ -5,11 +5,9 @@ import { GraduationCap, Menu, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
+  NavigationMenuItem,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import LoginForm from "./LoginForm";
@@ -43,47 +41,19 @@ const Navigation = () => {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger>About</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid gap-3 p-6 w-[400px]">
-                    <Link to="/about" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                      <div className="text-sm font-medium leading-none">About Us</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        Learn about our mission to connect students with quality education
-                      </p>
-                    </Link>
-                    <div className="block select-none space-y-1 rounded-md p-3 leading-none">
-                      <div className="text-sm font-medium leading-none">Contact Info</div>
-                      <p className="text-sm leading-snug text-muted-foreground">
-                        📞 +250 791 725 380, +250 791 628 276<br />
-                        ✉️ muhirejeanleonard2@gmail.com, support@amashuri.rw
-                      </p>
-                    </div>
-                  </div>
-                </NavigationMenuContent>
+                <Link to="/about">
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    About
+                  </NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Website Development</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid gap-3 p-6 w-[400px]">
-                    <Link to="/website-development" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                      <div className="text-sm font-medium leading-none">Professional Websites</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        Get a custom website for your school or educational institution
-                      </p>
-                    </Link>
-                    <div className="block select-none space-y-1 rounded-md p-3 leading-none">
-                      <div className="text-sm font-medium leading-none">Services</div>
-                      <p className="text-sm leading-snug text-muted-foreground">
-                        • Custom Design<br />
-                        • Mobile Responsive<br />
-                        • SEO Optimized<br />
-                        • Easy Management
-                      </p>
-                    </div>
-                  </div>
-                </NavigationMenuContent>
+                <Link to="/school-website">
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    School Website
+                  </NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
@@ -130,7 +100,7 @@ const Navigation = () => {
             <div className="flex flex-col space-y-4 p-6">
               <Link to="/schools" className="text-gray-700 hover:text-green-600">Schools</Link>
               <Link to="/about" className="text-gray-700 hover:text-green-600">About</Link>
-              <Link to="/website-development" className="text-gray-700 hover:text-green-600">Website Development</Link>
+              <Link to="/school-website" className="text-gray-700 hover:text-green-600">School Website</Link>
               <Link to="/buying" className="text-gray-700 hover:text-green-600">Packages</Link>
               <div className="flex flex-col space-y-2">
                 <Button 
