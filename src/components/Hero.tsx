@@ -2,24 +2,12 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, MapPin, GraduationCap, Users } from "lucide-react";
+import Navigation from "./Navigation";
 
 const Hero = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50">
-      {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between px-6 py-4 lg:px-8">
-        <div className="flex items-center space-x-2">
-          <GraduationCap className="h-8 w-8 text-green-600" />
-          <span className="text-2xl font-bold text-green-800">AMASHURI</span>
-          <span className="text-sm text-gray-600">.rw</span>
-        </div>
-        <div className="hidden md:flex items-center space-x-8">
-          <a href="#schools" className="text-gray-700 hover:text-green-600 transition-colors">Schools</a>
-          <a href="#about" className="text-gray-700 hover:text-green-600 transition-colors">About</a>
-          <a href="#packages" className="text-gray-700 hover:text-green-600 transition-colors">Packages</a>
-          <Button className="bg-green-600 hover:bg-green-700">Login / Register</Button>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Content */}
       <div className="relative z-10 px-6 py-20 lg:px-8">

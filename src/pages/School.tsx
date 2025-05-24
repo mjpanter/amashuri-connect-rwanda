@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Globe, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const School = () => {
   const [selectedLevel, setSelectedLevel] = useState("all");
@@ -131,9 +132,11 @@ const School = () => {
                   </div>
                 </div>
                 
-                <Button className="w-full bg-green-600 hover:bg-green-700">
-                  View Details
-                </Button>
+                <Link to={`/school/${school.id}`}>
+                  <Button className="w-full bg-green-600 hover:bg-green-700">
+                    View Details
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
