@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Star, Zap, ArrowLeft } from "lucide-react";
+import { Check, Star, Zap, ArrowLeft, CreditCard, Smartphone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Buying = () => {
@@ -34,7 +34,8 @@ const Buying = () => {
         "School history section",
         "Services showcase",
         "Priority support",
-        "Analytics dashboard"
+        "Analytics dashboard",
+        "Social media integration"
       ],
       limitations: [],
       buttonText: "Choose Pro",
@@ -44,24 +45,29 @@ const Buying = () => {
     },
     {
       name: "Premium Package",
-      price: "150,000 RWF",
+      price: "100,000 RWF",
       period: "/year",
-      description: "Complete solution with website development",
+      description: "Complete solution with enhanced features",
       features: [
         "Everything in Pro",
-        "Custom website development",
-        "Professional design",
-        "Content management system",
-        "SEO optimization",
-        "Hosting included",
-        "Maintenance support",
-        "Custom domain setup"
+        "Advanced analytics",
+        "Multiple admin accounts",
+        "Custom branding",
+        "Advanced SEO tools",
+        "Priority listing",
+        "Dedicated support",
+        "Marketing tools"
       ],
       limitations: [],
       buttonText: "Go Premium",
       buttonClass: "bg-purple-600 hover:bg-purple-700",
       icon: Zap
     }
+  ];
+
+  const paymentMethods = [
+    { name: "Mobile Money", icon: Smartphone, description: "MTN MoMo, Airtel Money" },
+    { name: "Credit Card", icon: CreditCard, description: "Visa, Mastercard via Stripe" },
   ];
 
   return (
@@ -91,7 +97,7 @@ const Buying = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
           {packages.map((pkg, index) => (
             <Card key={index} className={`relative ${pkg.popular ? 'ring-2 ring-green-500 shadow-lg scale-105' : ''} hover:shadow-lg transition-all duration-300`}>
               {pkg.popular && (
@@ -140,11 +146,39 @@ const Buying = () => {
           ))}
         </div>
 
+        {/* Payment Methods */}
+        <div className="bg-white rounded-lg shadow-sm p-8 mb-12">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Payment Methods</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {paymentMethods.map((method, index) => (
+              <Card key={index} className="border-2 border-gray-200 hover:border-green-500 transition-colors cursor-pointer">
+                <CardContent className="p-6 text-center">
+                  <method.icon className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                  <h4 className="text-xl font-semibold text-gray-900 mb-2">{method.name}</h4>
+                  <p className="text-gray-600">{method.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Website Development CTA */}
+        <div className="bg-gradient-to-r from-blue-600 to-purple-700 text-white rounded-lg p-8 text-center">
+          <h3 className="text-2xl font-bold mb-4">Need a Website for Your School?</h3>
+          <p className="text-lg mb-6">Get a professional website developed specifically for your institution</p>
+          <Link to="/website-development">
+            <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg">
+              Explore Website Development
+            </Button>
+          </Link>
+        </div>
+
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-4">Need help choosing the right package?</p>
-          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
-            Contact Our Team
-          </Button>
+          <div className="space-y-2 text-gray-600">
+            <p>📞 +250 791 725 380 | +250 791 628 276</p>
+            <p>✉️ muhirejeanleonard2@gmail.com | support@amashuri.rw</p>
+          </div>
         </div>
       </div>
     </div>

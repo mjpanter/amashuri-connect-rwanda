@@ -34,7 +34,8 @@ const Packages = () => {
         "School history section",
         "Services showcase",
         "Priority support",
-        "Analytics dashboard"
+        "Analytics dashboard",
+        "Social media integration"
       ],
       limitations: [],
       buttonText: "Choose Pro",
@@ -43,19 +44,19 @@ const Packages = () => {
       popular: true
     },
     {
-      name: "Pro Full Package",
-      price: "150,000 RWF",
+      name: "Premium Package",
+      price: "100,000 RWF",
       period: "/year",
-      description: "Complete solution with website development",
+      description: "Complete solution with enhanced features",
       features: [
         "Everything in Pro",
-        "Custom website development",
-        "Professional design",
-        "Content management system",
-        "SEO optimization",
-        "Hosting included",
-        "Maintenance support",
-        "Custom domain setup"
+        "Advanced analytics",
+        "Multiple admin accounts",
+        "Custom branding",
+        "Advanced SEO tools",
+        "Priority listing",
+        "Dedicated support",
+        "Marketing tools"
       ],
       limitations: [],
       buttonText: "Go Premium",
@@ -117,9 +118,11 @@ const Packages = () => {
                   ))}
                 </ul>
 
-                <Button className={`w-full ${pkg.buttonClass}`}>
-                  {pkg.buttonText}
-                </Button>
+                <Link to="/buying">
+                  <Button className={`w-full ${pkg.buttonClass}`}>
+                    {pkg.buttonText}
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
