@@ -1,10 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Star, Zap } from "lucide-react";
+import { Check, Star, Zap, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const Packages = () => {
+const Buying = () => {
   const packages = [
     {
       name: "Free Package",
@@ -43,7 +43,7 @@ const Packages = () => {
       popular: true
     },
     {
-      name: "Pro Full Package",
+      name: "Premium Package",
       price: "150,000 RWF",
       period: "/year",
       description: "Complete solution with website development",
@@ -65,11 +65,26 @@ const Packages = () => {
   ];
 
   return (
-    <section id="packages" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <div className="bg-white border-b">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <Link to="/" className="flex items-center text-gray-600 hover:text-gray-900">
+              <ArrowLeft className="h-5 w-5 mr-2" />
+              Back to Home
+            </Link>
+            <h1 className="text-2xl font-bold text-gray-900">Choose Your Package</h1>
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-6 py-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Choose Your Perfect Package
+            Select the Perfect Package for Your School
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Get the visibility your school deserves with our flexible packages designed for every need and budget
@@ -126,16 +141,14 @@ const Packages = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">Ready to get started?</p>
-          <Link to="/buying">
-            <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg">
-              View All Packages
-            </Button>
-          </Link>
+          <p className="text-gray-600 mb-4">Need help choosing the right package?</p>
+          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
+            Contact Our Team
+          </Button>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Packages;
+export default Buying;
